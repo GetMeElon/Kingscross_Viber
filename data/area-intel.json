@@ -36,7 +36,9 @@
   ],
   "dataSources": [
     "Map view: MapLibre GL JS over OpenStreetMap raster tiles.",
-    "Route graph: local curated venues with approximate coordinates for stable demos.",
+    "Neo4j: venues, vibes, and short walks as explainable route logic.",
+    "Kimchi: lightweight narration that turns the chosen route into concierge-style copy.",
+    "Tessl: build workflow support that helped assemble the right tools quickly.",
     "Area wiki: live Wikipedia GeoSearch with local fallback summaries when the API is slow."
   ]
 }

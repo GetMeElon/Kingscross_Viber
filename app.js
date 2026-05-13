@@ -119,7 +119,7 @@ function buildLocalSummary(route, preferences) {
   }
 
   const areas = [...new Set(route.map((place) => place.area))];
-  return `Local fallback keeps a ${preferences.vibe} night moving across ${areas.join(", ")} with walkable hops, stable map pins, and a route that still fits the chosen time and budget.`;
+  return `Local scoring still turns the ${preferences.vibe} brief into a believable route across ${areas.join(", ")} when no packaged snapshot is available.`;
 }
 
 function formatSnapshotSource(source) {
@@ -144,20 +144,21 @@ function buildReasons(route, preferences, recommendation) {
   const edges = routeEdges(route);
   const totalCost = route.reduce((total, place) => total + stopCost(place), 0);
   const totalMinutes = route.reduce((total, place) => total + place.minutes, 0);
-  let sourceReason = "The local scorer stays available as the default route contract, so the demo still reads clearly when no snapshot is present.";
+  let sourceReason = "Local fallback is active, so the browser is building the route from the curated place graph without calling Neo4j.";
 
   if (recommendation.mode === "snapshot") {
     sourceReason = recommendation.source === "neo4j"
-      ? "Neo4j sets the route order, and the same stops are remapped onto the local place graph for the map and graph views."
-      : "A locally generated snapshot pins the route order, and the same stops are remapped onto the local place graph for the map and graph views.";
+      ? "Neo4j produced this route snapshot from connected venues, vibes, and short walking links."
+      : "This packaged snapshot keeps the same route shape ready for demo mode when Aura is not available.";
   }
 
   return [
-    `${route.length} stops fit inside roughly ${Math.round(totalMinutes / 60)} hours with an estimated £${totalCost} spend.`,
-    `${route.filter((place) => place.vibes.includes(preferences.vibe)).length} venues directly match the ${preferences.vibe} mood.`,
-    edges.length ? `The graph found ${edges.length} short venue-to-venue links for an easier route.` : "The route favours high-scoring standalone venues because direct graph links are sparse.",
+    `${route.length} stops fit into roughly ${Math.round(totalMinutes / 60)} hours with an estimated £${totalCost} spend.`,
+    `${route.filter((place) => place.vibes.includes(preferences.vibe)).length} venues directly match the ${preferences.vibe} vibe.`,
+    edges.length ? `Neo4j-style graph logic found ${edges.length} short venue-to-venue links, so the night reads as a route, not a list.` : "The planner found high-fit standalone stops, then keeps the fallback route stable for the live demo.",
     sourceReason,
-    preferences.walkable ? "Kimchi keeps the narration short and walk-aware for a faster demo read." : "Kimchi keeps the narration concise while venue fit outranks walking distance."
+    preferences.walkable ? "Kimchi turns the graph result into a short walk-aware concierge explanation." : "Kimchi keeps the explanation concise while vibe fit outranks walking distance.",
+    "Tessl helped surface the project workflow and tool choices that got the static demo built quickly."
   ];
 }
 
@@ -170,6 +171,7 @@ function applyRecommendation(preferences, recommendation) {
 
   routeScore.textContent = `${recommendation.match}%`;
   routeSource.textContent = recommendation.sourceLabel;
+  routeSource.className = recommendation.sourceClass;
   routeSummary.textContent = recommendation.summary;
   renderRouteList(currentRoute);
 
@@ -597,14 +599,18 @@ function buildLocalRecommendation(preferences) {
     route,
     match: buildMatchScore(route, preferences),
     summary: buildLocalSummary(route, preferences),
-    sourceLabel: "Source: local fallback"
+    sourceLabel: "Source: local fallback",
+    sourceClass: "route-source is-fallback"
   };
 }
 
 function buildSnapshotRecommendation(snapshot, preferences) {
   const sourceLabel = snapshot.source === "neo4j"
-    ? "Source: Neo4j snapshot"
-    : "Source: local snapshot";
+    ? "Source: Neo4j route snapshot"
+    : "Source: packaged route snapshot";
+  const sourceClass = snapshot.source === "neo4j"
+    ? "route-source is-neo4j"
+    : "route-source is-packaged";
 
   return {
     mode: "snapshot",
@@ -612,7 +618,8 @@ function buildSnapshotRecommendation(snapshot, preferences) {
     route: snapshot.route,
     match: buildMatchScore(snapshot.route, preferences),
     summary: snapshot.summary,
-    sourceLabel
+    sourceLabel,
+    sourceClass
   };
 }
 

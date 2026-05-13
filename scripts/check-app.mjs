@@ -86,9 +86,9 @@ for (const [scriptName, scriptBody] of Object.entries(expectedScripts)) {
 }
 
 for (const phrase of [
-  "Neo4j provides the graph structure",
-  "Tessl defines the behavior contract",
-  "Kimchi adds the lightweight narration layer",
+  "Neo4j gives us the route logic",
+  "Kimchi gives us the explanation layer",
+  "Tessl helped us assemble the right build workflow",
   "backend proxy"
 ]) {
   if (!readme.includes(phrase)) {

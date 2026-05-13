@@ -42,6 +42,7 @@ The shipped app is static and browser-first, which keeps the demo safe under hac
 - `OpenStreetMap` provides the base map tiles.
 - The browser can enrich the experience with nearby `Wikipedia API` context.
 - Neo4j-generated recommendation snapshots can be exported into `data/recommendations/<vibe>.json`.
+- There is no backend proxy and no browser-to-Neo4j credential path.
 - If a snapshot is missing or invalid, the app falls back to local route logic without breaking the experience.
 
 ## Stack

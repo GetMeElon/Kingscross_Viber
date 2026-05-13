@@ -163,6 +163,32 @@ h1 {
   font-size: 20px;
 }
 
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.hero-proof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  font-weight: 800;
+  backdrop-filter: blur(12px);
+}
+
+.hero-proof strong {
+  margin-right: 5px;
+  color: white;
+}
+
 .primary-action {
   display: inline-flex;
   align-items: center;
@@ -346,6 +372,7 @@ output {
   display: inline-flex;
   width: fit-content;
   align-items: center;
+  gap: 7px;
   padding: 7px 10px;
   border: 1px solid rgba(36, 107, 80, 0.18);
   border-radius: 999px;
@@ -355,6 +382,32 @@ output {
   font-weight: 900;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.route-source::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+}
+
+.route-source.is-neo4j {
+  border-color: rgba(47, 95, 143, 0.24);
+  background: #eaf0f7;
+  color: #1f4d78;
+}
+
+.route-source.is-packaged {
+  border-color: rgba(190, 91, 82, 0.22);
+  background: #faeeee;
+  color: #94473f;
+}
+
+.route-source.is-fallback {
+  border-color: rgba(36, 107, 80, 0.18);
+  background: #eef4ef;
+  color: var(--green-dark);
 }
 
 .route-summary {
@@ -627,6 +680,10 @@ output {
 }
 
 @media (max-width: 640px) {
+  h1 {
+    font-size: 42px;
+  }
+
   .section-copy {
     max-width: none;
   }

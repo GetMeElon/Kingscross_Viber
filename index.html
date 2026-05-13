@@ -25,9 +25,14 @@
       <section class="hero">
         <img class="hero-map" src="assets/kings-cross-map.svg" alt="Stylized map of King’s Cross routes and venues.">
         <div class="shell hero-inner">
-          <p class="eyebrow">Kimchi + Neo4j + Tessl hack night</p>
-          <h1>Plan a better King’s Cross night from a graph of real nearby places.</h1>
-          <p class="hero-copy">Pick a mood, time, and budget. The app scores venues by vibe, walkability, and route fit, then explains the path like an AI concierge.</p>
+          <p class="eyebrow">AI night planner for King's Cross</p>
+          <h1>Turn a flat list of places into a believable night out.</h1>
+          <p class="hero-copy">Pick a vibe, budget, and time window. KingsCross Viber builds a multi-stop micro-adventure, then explains why each stop leads to the next.</p>
+          <div class="hero-proof" aria-label="Demo stack">
+            <span><strong>Neo4j</strong> route logic</span>
+            <span><strong>Kimchi</strong> concierge explanation</span>
+            <span><strong>Tessl</strong> faster build workflow</span>
+          </div>
           <a class="primary-action" href="#planner">Build my route</a>
         </div>
       </section>
@@ -87,8 +92,8 @@
           </section>
 
           <aside class="reason-panel" aria-labelledby="reason-title">
-            <p class="eyebrow">Graph reasoning</p>
-            <h3 id="reason-title">Why this route</h3>
+            <p class="eyebrow">Kimchi narration</p>
+            <h3 id="reason-title">Why this route works</h3>
             <ul id="reason-list"></ul>
           </aside>
         </div>
@@ -143,8 +148,8 @@
             </section>
 
             <section class="intel-card" aria-labelledby="source-title">
-              <p class="eyebrow">Data stack</p>
-              <h3 id="source-title">What powers the demo</h3>
+              <p class="eyebrow">Demo stack</p>
+              <h3 id="source-title">What each sponsor does</h3>
               <ul id="source-list" class="source-list"></ul>
             </section>
           </aside>
@@ -156,7 +161,7 @@
           <div>
             <p class="eyebrow">Place graph</p>
             <h2 id="graph-title">Venues connected by neighbourhood, vibe, and walking distance.</h2>
-            <p>The local graph keeps every stop legible on the map while matching the same neighbourhood structure used in the Neo4j snapshots.</p>
+            <p>Neo4j gives the route its structure: venues, vibes, and short walking links are connected so each recommendation can explain why one stop leads to the next.</p>
           </div>
           <div class="graph-card">
             <svg id="graph-svg" viewBox="0 0 720 440" role="img" aria-label="Graph of King’s Cross venues"></svg>
@@ -169,7 +174,7 @@
           <p class="eyebrow">Stage line</p>
           <h2 id="demo-title">One sentence for the judges</h2>
         </div>
-        <p>“Neo4j gives us the place-graph structure, Tessl keeps the recommendation contract stable, and Kimchi adds the lightweight narration layer for the live demo.”</p>
+        <p>“Neo4j gives us the route logic, Kimchi gives the user-facing explanation, and Tessl helped us assemble the right build workflow to ship it fast.”</p>
       </section>
     </main>
 
