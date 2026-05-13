@@ -1,0 +1,6 @@
+docs/** linguist-documentation
+node_modules/** linguist-vendored
+assets/** linguist-vendored
+data/** linguist-vendored
+data/recommendations/** linguist-generated
+package-lock.json linguist-generated
