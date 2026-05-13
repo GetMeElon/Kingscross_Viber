@@ -5,7 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "python3 -m http.server 5173",
-    "test": "node scripts/check-app.mjs"
+    "test": "node scripts/check-app.mjs",
+    "neo4j:seed": "node scripts/seed-neo4j.mjs",
+    "neo4j:query": "node scripts/query-neo4j.mjs",
+    "neo4j:export": "node scripts/export-neo4j-snapshots.mjs",
+    "neo4j:export:local": "node scripts/export-neo4j-snapshots.mjs --from-local",
+    "neo4j:validate": "node scripts/export-neo4j-snapshots.mjs --dry-run"
+  },
+  "dependencies": {
+    "neo4j-driver": "^6.0.0"
   }
 }
-

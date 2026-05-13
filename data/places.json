@@ -8,6 +8,8 @@
       "cost": "medium",
       "minutes": 55,
       "vibes": ["creative", "food"],
+      "summary": "Canalside cluster with retail, restaurants, and strong demo-friendly foot traffic near Granary Square.",
+      "coordinates": [-0.1255, 51.5357],
       "x": 250,
       "y": 155
     },
@@ -19,6 +21,8 @@
       "cost": "high",
       "minutes": 70,
       "vibes": ["music", "food"],
+      "summary": "Listening bar energy that turns a food-first route into a music-led evening without leaving the core district.",
+      "coordinates": [-0.1246, 51.5354],
       "x": 345,
       "y": 205
     },
@@ -30,6 +34,8 @@
       "cost": "medium",
       "minutes": 45,
       "vibes": ["food", "creative"],
+      "summary": "Flexible market stop that works well for browsing, quick bites, and anchoring a shorter route.",
+      "coordinates": [-0.1247, 51.5350],
       "x": 190,
       "y": 235
     },
@@ -41,6 +47,8 @@
       "cost": "low",
       "minutes": 35,
       "vibes": ["quiet", "creative"],
+      "summary": "Quiet canalside pause with a strong visual contrast to the station and retail cluster.",
+      "coordinates": [-0.1268, 51.5339],
       "x": 455,
       "y": 135
     },
@@ -52,6 +60,8 @@
       "cost": "low",
       "minutes": 30,
       "vibes": ["quiet"],
+      "summary": "Compact elevated green stop that gives the route a calmer checkpoint near the busiest pedestrian flows.",
+      "coordinates": [-0.1227, 51.5360],
       "x": 535,
       "y": 220
     },
@@ -63,6 +73,8 @@
       "cost": "medium",
       "minutes": 65,
       "vibes": ["food"],
+      "summary": "Reliable food anchor for a mid-budget route, close enough to pull the graph back toward the station edge.",
+      "coordinates": [-0.1238, 51.5346],
       "x": 410,
       "y": 300
     },
@@ -74,6 +86,8 @@
       "cost": "high",
       "minutes": 90,
       "vibes": ["music"],
+      "summary": "High-energy outlier that stretches the route beyond King's Cross when the user wants a stronger night-out finish.",
+      "coordinates": [-0.1383, 51.5343],
       "x": 620,
       "y": 330
     },
@@ -85,6 +99,8 @@
       "cost": "low",
       "minutes": 50,
       "vibes": ["quiet", "creative"],
+      "summary": "Cultural anchor on the St Pancras edge that broadens the route beyond food and nightlife without blowing the budget.",
+      "coordinates": [-0.1272, 51.5299],
       "x": 120,
       "y": 335
     }
@@ -101,4 +117,3 @@
     { "from": "spiritland", "to": "koko", "walk": 19 }
   ]
 }
-

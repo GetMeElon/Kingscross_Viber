@@ -1,0 +1,34 @@
+{
+  "vibe": "quiet",
+  "source": "local-snapshot",
+  "summary": "A quiet route across King's Cross with 2 of 3 vibe matches and 12 total walking minutes between stops.",
+  "stops": [
+    {
+      "id": "waitrose-roof",
+      "name": "KX Roof Garden",
+      "category": "garden",
+      "area": "King's Cross",
+      "walkMinutes": 0,
+      "note": "Compact elevated green stop that gives the route a calmer checkpoint near the busiest pedestrian flows.",
+      "fact": "garden in King's Cross; allow about 30 minutes and expect low spend."
+    },
+    {
+      "id": "gasholder",
+      "name": "Gasholder Park",
+      "category": "waterside walk",
+      "area": "King's Cross",
+      "walkMinutes": 7,
+      "note": "Quiet canalside pause with a strong visual contrast to the station and retail cluster.",
+      "fact": "waterside walk in King's Cross; allow about 35 minutes and expect low spend."
+    },
+    {
+      "id": "coal-drops",
+      "name": "Coal Drops Yard",
+      "category": "shops and restaurants",
+      "area": "King's Cross",
+      "walkMinutes": 5,
+      "note": "Canalside cluster with retail, restaurants, and strong demo-friendly foot traffic near Granary Square.",
+      "fact": "shops and restaurants in King's Cross; allow about 55 minutes and expect medium spend."
+    }
+  ]
+}

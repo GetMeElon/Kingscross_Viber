@@ -1,0 +1,42 @@
+{
+  "name": "King's Cross and St Pancras",
+  "center": {
+    "lat": 51.5352,
+    "lon": -0.1253
+  },
+  "summary": "King's Cross compresses rail hubs, canalside public space, culture, food, and nightlife into a walkable district that judges can understand instantly from a single map view.",
+  "signals": [
+    "Granary Square, Coal Drops Yard, and the canal create a dense loop that feels legible in under 15 minutes of walking.",
+    "The station edge makes the area broadly recognizable, which helps the demo land fast without extra explanation.",
+    "Quiet cultural stops and louder late-evening venues sit close enough together for graph-based route planning to feel useful."
+  ],
+  "wiki": {
+    "radiusMeters": 1400,
+    "limit": 5
+  },
+  "fallbackWiki": [
+    {
+      "title": "King's Cross",
+      "url": "https://en.wikipedia.org/wiki/King%27s_Cross",
+      "meta": "Area overview",
+      "extract": "King's Cross is a central London district shaped by major rail connections and large-scale regeneration around the canal and station frontage."
+    },
+    {
+      "title": "St Pancras railway station",
+      "url": "https://en.wikipedia.org/wiki/St_Pancras_railway_station",
+      "meta": "Transport anchor",
+      "extract": "St Pancras anchors the neighbourhood with long-distance rail links and a station complex that spills directly into the surrounding district."
+    },
+    {
+      "title": "British Library",
+      "url": "https://en.wikipedia.org/wiki/British_Library",
+      "meta": "Cultural stop",
+      "extract": "The British Library gives the area a strong cultural signal and broadens routes beyond retail and nightlife."
+    }
+  ],
+  "dataSources": [
+    "Map view: MapLibre GL JS over OpenStreetMap raster tiles.",
+    "Route graph: local curated venues with approximate coordinates for stable demos.",
+    "Area wiki: live Wikipedia GeoSearch with local fallback summaries when the API is slow."
+  ]
+}

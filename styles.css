@@ -187,6 +187,11 @@ h1 {
   margin-bottom: 24px;
 }
 
+.section-copy {
+  max-width: 360px;
+  color: var(--muted);
+}
+
 h2 {
   margin-top: 8px;
   font-size: clamp(34px, 5vw, 56px);
@@ -331,15 +336,57 @@ output {
   list-style: none;
 }
 
-.route-stop {
+.route-meta {
   display: grid;
-  grid-template-columns: 46px 1fr auto;
-  gap: 14px;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.route-source {
+  display: inline-flex;
+  width: fit-content;
   align-items: center;
+  padding: 7px 10px;
+  border: 1px solid rgba(36, 107, 80, 0.18);
+  border-radius: 999px;
+  background: #eef4ef;
+  color: var(--green-dark);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.route-summary {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.route-stop {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfcf8;
+}
+
+.route-stop-button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 46px 1fr auto;
+  gap: 14px;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.route-stop-button.is-focused {
+  color: var(--green-dark);
 }
 
 .stop-index {
@@ -353,14 +400,24 @@ output {
   font-weight: 900;
 }
 
-.route-stop h4 {
-  margin: 0;
+.stop-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.stop-copy strong {
   font-size: 18px;
 }
 
-.route-stop p {
+.stop-copy span {
   color: var(--muted);
   font-size: 14px;
+}
+
+.stop-detail {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .cost {
@@ -372,6 +429,117 @@ output {
   gap: 12px;
   margin: 18px 0 0;
   padding-left: 18px;
+  color: var(--muted);
+}
+
+.nearby-section {
+  padding: 0 0 84px;
+}
+
+.nearby-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.map-card,
+.intel-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.map-card {
+  padding: 18px;
+}
+
+.map-status,
+.wiki-status {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.area-map {
+  min-height: 560px;
+  margin-top: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(36, 107, 80, 0.16), rgba(47, 95, 143, 0.16)),
+    #e5ede8;
+}
+
+.intel-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.intel-card {
+  padding: 18px;
+}
+
+.signal-list,
+.source-list,
+.wiki-list {
+  margin: 18px 0 0;
+}
+
+.signal-list,
+.source-list {
+  padding-left: 18px;
+}
+
+.signal-list li,
+.source-list li {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.focus-card h4 {
+  margin-top: 14px;
+  font-size: 26px;
+}
+
+.focus-meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.focus-card p:last-child {
+  margin-top: 12px;
+}
+
+.wiki-list {
+  padding: 0;
+  list-style: none;
+}
+
+.wiki-item + .wiki-item {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.wiki-item a {
+  font-weight: 900;
+}
+
+.wiki-item span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.wiki-item p {
+  margin-top: 8px;
   color: var(--muted);
 }
 
@@ -435,6 +603,7 @@ output {
 
   .controls,
   .route-layout,
+  .nearby-layout,
   .graph-layout,
   .demo-strip {
     grid-template-columns: 1fr;
@@ -444,12 +613,21 @@ output {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .route-stop {
+  .route-stop-button {
     grid-template-columns: 40px 1fr;
   }
 
   .cost {
     grid-column: 2;
   }
+
+  .area-map {
+    min-height: 420px;
+  }
 }
 
+@media (max-width: 640px) {
+  .section-copy {
+    max-width: none;
+  }
+}

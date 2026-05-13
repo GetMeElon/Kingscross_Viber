@@ -1,0 +1,34 @@
+{
+  "vibe": "music",
+  "source": "local-snapshot",
+  "summary": "A music route across King's Cross, Camden with 2 of 3 vibe matches and 23 total walking minutes between stops.",
+  "stops": [
+    {
+      "id": "spiritland",
+      "name": "Spiritland",
+      "category": "music bar",
+      "area": "King's Cross",
+      "walkMinutes": 0,
+      "note": "Listening bar energy that turns a food-first route into a music-led evening without leaving the core district.",
+      "fact": "music bar in King's Cross; allow about 70 minutes and expect high spend."
+    },
+    {
+      "id": "lina-stores",
+      "name": "Lina Stores",
+      "category": "pasta",
+      "area": "King's Cross",
+      "walkMinutes": 5,
+      "note": "Reliable food anchor for a mid-budget route, close enough to pull the graph back toward the station edge.",
+      "fact": "pasta in King's Cross; allow about 65 minutes and expect medium spend."
+    },
+    {
+      "id": "koko",
+      "name": "KOKO",
+      "category": "live music",
+      "area": "Camden",
+      "walkMinutes": 18,
+      "note": "High-energy outlier that stretches the route beyond King's Cross when the user wants a stronger night-out finish.",
+      "fact": "live music in Camden; allow about 90 minutes and expect high spend."
+    }
+  ]
+}

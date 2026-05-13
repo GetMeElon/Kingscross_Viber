@@ -1,71 +1,34 @@
 # KingsCross Viber
 
-KingsCross Viber is a hackathon demo for planning a better night out around KingsCross. It turns nearby venues, vibes, and short walk connections into an explainable route, then presents the result as a concise concierge-style recommendation instead of a raw list of places.
+Static hackathon demo for building a believable King's Cross night-out route from a small curated place graph.
 
-## The idea
+## Pitch
 
-Most local recommendation products can suggest places, but they struggle to explain why a route makes sense as a sequence. KingsCross Viber treats the night as a graph problem:
+Neo4j provides the graph structure, Tessl defines the behavior contract, and Kimchi adds the lightweight narration layer.
 
-- venues are places
-- moods are vibes
-- short walks are edges
-- the output is a believable 3-stop micro-adventure
+- **Neo4j**: venues, vibes, and short walks as explicit graph structure.
+- **Tessl**: the contract for how a recommendation should behave: plausible route, good vibe fit, short transitions, one memorable fact.
+- **Kimchi**: the concise reasoning and stage-friendly explanation layer on top of the chosen route.
 
-The user picks a vibe, time window, budget, and walking preference. The system then assembles a route that balances venue fit, route plausibility, and short transitions between stops.
+## Demo-safe architecture
 
-## Sponsor story
+The app stays static and browser-only.
 
-The demo is intentionally shaped around three clear roles:
+- Neo4j is used offline to generate recommendation snapshots ahead of the demo.
+- The static app prefers those snapshots when they exist.
+- If a snapshot is missing, invalid, or Aura is unavailable, the existing local route logic still works.
+- Neo4j credentials stay local-only and uncommitted.
 
-- **Neo4j** is the place graph that makes route reasoning explainable. Venues, vibes, and walk edges are first-class graph entities, so the route can be described as connected structure rather than a black-box ranking.
-- **Tessl** is the behavior contract. It defines how recommendations should behave: balance vibe match, walking distance, plausibility, and one surprising fact, consistently.
-- **Kimchi** is the lightweight reasoning and narration layer. It turns graph results into a cheap, fast concierge-style explanation instead of just dumping ranked venues.
+Current local data already in the repo:
 
-## 60-second product line
+- `data/places.json`
+- `data/area-intel.json`
 
-> Neo4j finds the route structure, Tessl defines the recommendation behavior, and Kimchi turns the result into a cheap, fast explanation layer for the user.
+Expected snapshot output path for the Neo4j lane:
 
-## Current demo shape
+- `data/recommendations/<vibe>.json`
 
-The current repo ships a stable local-first version of that architecture:
-
-- a curated local venue graph in `data/places.json`
-- area brief and fallback context in `data/area-intel.json`
-- an open map rendered with `MapLibre GL JS`
-- base tiles from `OpenStreetMap`
-- live nearby context from the `Wikipedia API`
-- a browser UI built with HTML, CSS, and vanilla JavaScript
-
-This lets the demo stay reliable on stage even before a live Neo4j-backed query path is wired in.
-
-## What the user sees
-
-1. Pick a vibe, time window, budget, and walking preference.
-2. Get a multi-stop route around KingsCross.
-3. See why the route fits, including route score and graph reasoning.
-4. Explore the stops on an open map with nearby area context.
-
-## Why this works for a hackathon
-
-- It is easy to explain in one sentence.
-- The graph model makes the recommendation legible to judges.
-- The local fallback keeps the demo resilient.
-- The sponsor technologies each have a distinct role in the story.
-
-## Stack
-
-- Tessl
-- Kimchi
-- Neo4j-shaped place graph
-- HTML
-- CSS
-- JavaScript
-- MapLibre GL JS
-- OpenStreetMap
-- Wikipedia API
-- Local JSON data
-
-## Run locally
+## Run
 
 ```bash
 npm run dev
@@ -78,3 +41,58 @@ Open `http://127.0.0.1:5173`.
 ```bash
 npm test
 ```
+
+This runs `scripts/check-app.mjs`.
+
+For the Neo4j lane without Aura access, you can still validate the contract locally:
+
+```bash
+npm run neo4j:validate
+```
+
+## Neo4j Export Flow
+
+This repo does **not** expose Neo4j credentials to the browser and does **not** use a backend proxy.
+
+Committed placeholder config:
+
+- `.env.example`
+
+Local-only config:
+
+- `.env.local`
+
+Main scripts:
+
+- `scripts/seed-neo4j.mjs`
+- `scripts/query-neo4j.mjs`
+- `scripts/export-neo4j-snapshots.mjs`
+
+Typical flow:
+
+```bash
+cp .env.example .env.local
+npm run neo4j:seed
+npm run neo4j:query -- creative
+npm run neo4j:export
+```
+
+That writes `data/recommendations/<vibe>.json`, which the static app prefers automatically. If those files are absent or malformed, the UI falls back to the local route logic without breaking the demo.
+
+If Aura is down, the static app should continue using the local graph fallback.
+
+Offline snapshot generation for demo packaging is also available:
+
+```bash
+npm run neo4j:export:local
+```
+
+Those offline files keep the same route contract but carry `source: "local-snapshot"` so the UI does not pretend they came from Aura.
+
+## What Judges Should Understand
+
+- It is a static browser demo, not a live database client.
+- Neo4j makes the route explainable.
+- Tessl makes the behavior consistent.
+- Kimchi makes the output easy to present.
+- The fallback path keeps the demo reliable on stage.
