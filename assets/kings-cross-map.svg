@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Stylized King's Cross map</title>
+  <desc id="desc">A textured map-inspired visual with canal lines, routes, and venue nodes.</desc>
+  <rect width="1600" height="1000" fill="#dfe7de"/>
+  <path d="M-80 710 C260 570 375 735 635 610 C925 470 1090 520 1690 260" fill="none" stroke="#8eb6c5" stroke-width="120" opacity=".62"/>
+  <path d="M-40 746 C286 604 392 760 660 632 C940 500 1098 548 1660 306" fill="none" stroke="#d9eef2" stroke-width="48" opacity=".85"/>
+  <path d="M160 90 L640 340 L1110 250 L1450 510" fill="none" stroke="#f2b84b" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity=".88"/>
+  <path d="M245 890 L520 590 L845 700 L1285 365" fill="none" stroke="#be5b52" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity=".82"/>
+  <path d="M80 370 L340 315 L590 410 L850 310 L1165 535 L1520 600" fill="none" stroke="#246b50" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  <g fill="#f8f4e8" stroke="#123f30" stroke-width="10">
+    <circle cx="335" cy="315" r="42"/>
+    <circle cx="595" cy="410" r="38"/>
+    <circle cx="845" cy="700" r="40"/>
+    <circle cx="1110" cy="250" r="44"/>
+    <circle cx="1285" cy="365" r="36"/>
+  </g>
+  <g fill="#123f30" font-family="Arial, sans-serif" font-weight="800" font-size="44">
+    <text x="390" y="330">Coal Drops</text>
+    <text x="650" y="428">Granary Square</text>
+    <text x="900" y="716">St Pancras</text>
+    <text x="1165" y="265">Gasholder</text>
+    <text x="1335" y="382">Music</text>
+  </g>
+  <g opacity=".17" stroke="#16201d" stroke-width="2">
+    <path d="M0 160 H1600"/>
+    <path d="M0 320 H1600"/>
+    <path d="M0 480 H1600"/>
+    <path d="M0 640 H1600"/>
+    <path d="M0 800 H1600"/>
+    <path d="M220 0 V1000"/>
+    <path d="M440 0 V1000"/>
+    <path d="M660 0 V1000"/>
+    <path d="M880 0 V1000"/>
+    <path d="M1100 0 V1000"/>
+    <path d="M1320 0 V1000"/>
+  </g>
+</svg>
+

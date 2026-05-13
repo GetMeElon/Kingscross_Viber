@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>King's Cross Viber</title>
+    <meta name="description" content="Graph-guided King’s Cross night planner for hackathon demos.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="shell topbar">
+      <a class="brand" href="#" aria-label="King's Cross Viber home">
+        <span class="brand-mark">KX</span>
+        <span>King's Cross Viber</span>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#planner">Planner</a>
+        <a href="#graph">Graph</a>
+        <a href="#demo">Demo</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <img class="hero-map" src="assets/kings-cross-map.svg" alt="Stylized map of King’s Cross routes and venues.">
+        <div class="shell hero-inner">
+          <p class="eyebrow">Kimchi + Neo4j + Tessl hack night</p>
+          <h1>Plan a better King’s Cross night from a graph of real nearby places.</h1>
+          <p class="hero-copy">Pick a mood, time, and budget. The app scores venues by vibe, walkability, and route fit, then explains the path like an AI concierge.</p>
+          <a class="primary-action" href="#planner">Build my route</a>
+        </div>
+      </section>
+
+      <section id="planner" class="shell planner" aria-labelledby="planner-title">
+        <div class="section-head">
+          <p class="eyebrow">Live planner</p>
+          <h2 id="planner-title">Tune the night</h2>
+        </div>
+
+        <form class="controls" id="route-form">
+          <fieldset>
+            <legend>Vibe</legend>
+            <div class="segmented" role="radiogroup" aria-label="Vibe">
+              <label><input type="radio" name="vibe" value="creative" checked><span>Creative</span></label>
+              <label><input type="radio" name="vibe" value="food"><span>Food</span></label>
+              <label><input type="radio" name="vibe" value="music"><span>Music</span></label>
+              <label><input type="radio" name="vibe" value="quiet"><span>Quiet</span></label>
+            </div>
+          </fieldset>
+
+          <label class="control">
+            <span>Time window</span>
+            <select name="hours">
+              <option value="2">2 hours</option>
+              <option value="3" selected>3 hours</option>
+              <option value="4">4 hours</option>
+            </select>
+          </label>
+
+          <label class="control">
+            <span>Budget</span>
+            <input name="budget" type="range" min="20" max="80" value="45" step="5">
+            <output id="budget-output">£45</output>
+          </label>
+
+          <label class="control toggle">
+            <input name="walkable" type="checkbox" checked>
+            <span>Prefer short walks</span>
+          </label>
+        </form>
+
+        <div class="route-layout">
+          <section class="route-panel" aria-labelledby="route-title">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Recommended route</p>
+                <h3 id="route-title">Tonight’s plan</h3>
+              </div>
+              <span class="route-score" id="route-score">0%</span>
+            </div>
+            <ol class="route-list" id="route-list"></ol>
+          </section>
+
+          <aside class="reason-panel" aria-labelledby="reason-title">
+            <p class="eyebrow">Graph reasoning</p>
+            <h3 id="reason-title">Why this route</h3>
+            <ul id="reason-list"></ul>
+          </aside>
+        </div>
+      </section>
+
+      <section id="graph" class="graph-band" aria-labelledby="graph-title">
+        <div class="shell graph-layout">
+          <div>
+            <p class="eyebrow">Place graph</p>
+            <h2 id="graph-title">Venues connected by neighbourhood, vibe, and walking distance.</h2>
+            <p>Every route is assembled from local nodes and edges. In the full version, these same connections move into Neo4j for live Cypher queries.</p>
+          </div>
+          <div class="graph-card">
+            <svg id="graph-svg" viewBox="0 0 720 440" role="img" aria-label="Graph of King’s Cross venues"></svg>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="shell demo-strip" aria-labelledby="demo-title">
+        <div>
+          <p class="eyebrow">Stage line</p>
+          <h2 id="demo-title">One sentence for the judges</h2>
+        </div>
+        <p>“This is Codex using a Tessl-ready workflow, planning over a Neo4j-shaped King’s Cross graph, with Kimchi as the open model layer for the live agent demo.”</p>
+      </section>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
+

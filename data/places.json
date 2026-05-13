@@ -1,0 +1,104 @@
+{
+  "places": [
+    {
+      "id": "coal-drops",
+      "name": "Coal Drops Yard",
+      "category": "shops and restaurants",
+      "area": "King's Cross",
+      "cost": "medium",
+      "minutes": 55,
+      "vibes": ["creative", "food"],
+      "x": 250,
+      "y": 155
+    },
+    {
+      "id": "spiritland",
+      "name": "Spiritland",
+      "category": "music bar",
+      "area": "King's Cross",
+      "cost": "high",
+      "minutes": 70,
+      "vibes": ["music", "food"],
+      "x": 345,
+      "y": 205
+    },
+    {
+      "id": "canopy",
+      "name": "Canopy Market",
+      "category": "market",
+      "area": "Granary Square",
+      "cost": "medium",
+      "minutes": 45,
+      "vibes": ["food", "creative"],
+      "x": 190,
+      "y": 235
+    },
+    {
+      "id": "gasholder",
+      "name": "Gasholder Park",
+      "category": "waterside walk",
+      "area": "King's Cross",
+      "cost": "low",
+      "minutes": 35,
+      "vibes": ["quiet", "creative"],
+      "x": 455,
+      "y": 135
+    },
+    {
+      "id": "waitrose-roof",
+      "name": "KX Roof Garden",
+      "category": "garden",
+      "area": "King's Cross",
+      "cost": "low",
+      "minutes": 30,
+      "vibes": ["quiet"],
+      "x": 535,
+      "y": 220
+    },
+    {
+      "id": "lina-stores",
+      "name": "Lina Stores",
+      "category": "pasta",
+      "area": "King's Cross",
+      "cost": "medium",
+      "minutes": 65,
+      "vibes": ["food"],
+      "x": 410,
+      "y": 300
+    },
+    {
+      "id": "koko",
+      "name": "KOKO",
+      "category": "live music",
+      "area": "Camden",
+      "cost": "high",
+      "minutes": 90,
+      "vibes": ["music"],
+      "x": 620,
+      "y": 330
+    },
+    {
+      "id": "british-library",
+      "name": "British Library",
+      "category": "culture",
+      "area": "St Pancras",
+      "cost": "low",
+      "minutes": 50,
+      "vibes": ["quiet", "creative"],
+      "x": 120,
+      "y": 335
+    }
+  ],
+  "edges": [
+    { "from": "coal-drops", "to": "canopy", "walk": 4 },
+    { "from": "canopy", "to": "spiritland", "walk": 6 },
+    { "from": "spiritland", "to": "lina-stores", "walk": 5 },
+    { "from": "coal-drops", "to": "gasholder", "walk": 5 },
+    { "from": "gasholder", "to": "waitrose-roof", "walk": 7 },
+    { "from": "waitrose-roof", "to": "lina-stores", "walk": 8 },
+    { "from": "british-library", "to": "canopy", "walk": 11 },
+    { "from": "lina-stores", "to": "koko", "walk": 18 },
+    { "from": "spiritland", "to": "koko", "walk": 19 }
+  ]
+}
+

@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+dist/
+.env
+.env.*
+*.log
+.codex/
+.cursor/
+.gemini/
+.superpowers/
+.vscode/
+.mcp.json
